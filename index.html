@@ -1,13 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>kanban board</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <script type="module" src="/src/drag.ts" defer></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app">
+      <div class="board">
+        <form id="todo-form">
+          <input type="text" placeholder="New TODO..." id="todo-input" />
+          <button type="submit">Add +</button>
+        </form>
+
+        <div class="lanes">
+          <div class="swim-lane" id="todo-lane">
+            <h3 class="heading">TODO</h3>
+
+            <p class="task" draggable="true">Get groceries</p>
+            <p class="task" draggable="true">Feed the dogs</p>
+            <p class="task" draggable="true">Mow the lawn</p>
+          </div>
+
+          <div class="swim-lane">
+            <h3 class="heading">Doing</h3>
+
+            <p class="task" draggable="true">
+              Binge 80 hours of Game of Thrones
+            </p>
+          </div>
+
+          <div class="swim-lane">
+            <h3 class="heading">Done</h3>
+
+            <p class="task" draggable="true">
+              Watch video of a man raising a grocery store lobster as a pet
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
